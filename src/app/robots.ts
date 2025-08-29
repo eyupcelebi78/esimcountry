@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://esimcountry.com/sitemap.xml',
+    sitemap: 'https://esimcountry.fyi/sitemap.xml',
   }
-} 
+}

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://esimcountry.com'
+  const baseUrl = 'https://esimcountry.fyi'
   
   // Countries we have data for
   const countries = [
@@ -63,4 +63,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   return [...mainPages, ...countryPages, ...blogPages]
-} 
+}
