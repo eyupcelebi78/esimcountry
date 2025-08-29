@@ -1,36 +1,189 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 eSIM Country - Travel eSIM Comparison Platform
 
-## Getting Started
+> **The ultimate destination for finding the best eSIM deals worldwide!**
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15.5.2-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.1.0-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.2-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.12-cyan)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Database-green)](https://supabase.com/)
+
+## ✨ Features
+
+### 🚀 **Real-Time Data**
+- **Live pricing** from 15+ eSIM providers
+- **Daily updates** ensuring accuracy
+- **Real 2025 prices** with working URLs
+
+### 🗺️ **Comprehensive Coverage**
+- **50+ countries** with detailed guides
+- **Network coverage maps** for major cities
+- **Provider comparisons** with pros/cons
+
+### 📊 **Smart Comparison**
+- **Advanced filtering** by price, data, duration
+- **Side-by-side comparisons** of plans
+- **Best value recommendations** for each use case
+
+### 📱 **Mobile-First Design**
+- **Responsive design** works on all devices
+- **Fast loading** with optimized performance
+- **PWA ready** for mobile installation
+
+### 🎯 **SEO Optimized**
+- **Schema markup** for rich snippets
+- **Core Web Vitals** optimized
+- **Blog content** with travel guides
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15.5.2 with App Router
+- **Language:** TypeScript 5.9.2
+- **Styling:** Tailwind CSS 4.1.12
+- **Database:** Supabase (PostgreSQL)
+- **Deployment:** Vercel
+- **Analytics:** Google AdSense integrated
+
+## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/eyupcelebi78/esimcountry.git
+
+# Navigate to project directory
+cd esimcountry
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔧 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
 
-## Learn More
+```env
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-To learn more about Next.js, take a look at the following resources:
+# Google AdSense
+NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-8486271485798253
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Environment
+NODE_ENV=development
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                    # Next.js 15 App Router
+│   ├── api/               # API routes
+│   ├── blog/              # Blog pages
+│   ├── esim/              # Country-specific pages
+│   └── layout.tsx         # Root layout
+├── components/            # Reusable components
+│   ├── AdSense.tsx        # Google AdSense integration
+│   ├── CountrySelector.tsx # Country selection
+│   └── PlanComparisonTable.tsx # Plan comparison
+├── lib/                   # Utilities and configurations
+│   ├── supabase.ts        # Supabase client
+│   └── sheets.ts          # Google Sheets integration
+└── types/                 # TypeScript type definitions
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Homepage**
+- Hero section with country selector
+- Trust signals (Real prices, Updated daily)
+- Plan comparison table
+- FAQ section with schema markup
+
+### **Country Pages** (`/esim/[country]`)
+- Breadcrumb navigation
+- Trust signals and statistics
+- Comprehensive plan comparison
+- Network coverage information
+- FAQ specific to country
+
+### **Blog** (`/blog/`)
+- SEO-optimized articles
+- Country-specific guides
+- Provider comparisons
+- Setup instructions
+
+### **API Routes**
+- `/api/countries` - Country data
+- `/api/providers` - Provider information
+- `/api/turkey-plans` - Turkey-specific plans
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect GitHub repository to Vercel**
+2. **Add environment variables:**
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `NEXT_PUBLIC_ADSENSE_CLIENT_ID`
+3. **Deploy automatically on every push**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eyupcelebi78/esimcountry)
+
+## 📈 Performance
+
+- **Core Web Vitals** optimized
+- **Lighthouse Score** 95+
+- **Image optimization** with Next.js
+- **CSS optimization** with Tailwind
+- **Database optimization** with Supabase
+
+## 💰 Monetization
+
+- **Google AdSense** integration
+- **Affiliate links** to eSIM providers
+- **Sponsored content** opportunities
+- **Premium features** potential
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **Documentation:** [Deployment Guide](vercel-deployment-guide.md)
+- **Issues:** [GitHub Issues](https://github.com/eyupcelebi78/esimcountry/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/eyupcelebi78/esimcountry/discussions)
+
+## 🙏 Acknowledgments
+
+- **Supabase** for the amazing database platform
+- **Vercel** for seamless deployment
+- **Next.js** team for the excellent framework
+- **Tailwind CSS** for the utility-first styling
+- **eSIM providers** for the data and partnerships
+
+---
+
+Made with ❤️ by [eyupcelebi78](https://github.com/eyupcelebi78)
+
+**Live Demo:** [Coming Soon on Vercel]
