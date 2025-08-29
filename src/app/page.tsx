@@ -1,103 +1,539 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { createCountrySlug, CountryData } from '@/lib/supabase';
+import CountrySelector from '@/components/CountrySelector';
+import PlanComparisonTable from '@/components/PlanComparisonTable';
+import { LeaderboardAd, RectangleAd } from '@/components/AdSense';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [countryData, setCountryData] = useState<CountryData[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  // FAQ Schema for homepage
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is an eSIM and how does it work?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of inserting a physical card, you download your plan and activate it with a QR code. It works just like a regular SIM but is much more convenient for travelers.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Which phones support eSIM?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most modern smartphones support eSIM including iPhone XS and newer, Google Pixel 3 and newer, Samsung Galaxy S20 and newer, and many other Android devices.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I activate my eSIM?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'After purchasing, you\'ll receive a QR code via email. Go to your phone\'s settings, find "Mobile Data" or "Cellular", select "Add eSIM" and scan the QR code.'
+        }
+      }
+    ]
+  };
+
+  useEffect(() => {
+    fetchCountryData();
+  }, []);
+
+  const fetchCountryData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const response = await fetch('/api/countries');
+      if (response.ok) {
+        const data = await response.json();
+        setCountryData(data);
+        if (data.length > 0) {
+          setSelectedCountry(data[0].country);
+        }
+      } else {
+        throw new Error('Failed to fetch data');
+      }
+    } catch (err) {
+      console.error('Error fetching country data:', err);
+      setError('Failed to load data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const selectedCountryData = countryData.find(
+    (country) => country.country === selectedCountry
+  );
+
+  const totalPlans = countryData.reduce((sum, country) => sum + country.plans.length, 0);
+  const totalCountries = countryData.length;
+  const allProviders = [...new Set(countryData.flatMap(country => 
+    country.plans.map(plan => plan.provider)
+  ))];
+
+  const popularCountries = countryData
+    .sort((a, b) => b.plans.length - a.plans.length)
+    .slice(0, 6);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading eSIM comparison data...</p>
         </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        {/* Navigation */}
+      <nav className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-xl font-bold text-blue-600">
+              🌍 eSIM Country
+            </Link>
+            <div className="flex items-center space-x-6">
+              <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">
+                📝 Blog
+              </Link>
+              <Link href="/esim/turkey" className="text-gray-600 hover:text-blue-600 transition-colors">
+                🇹🇷 Turkey
+              </Link>
+              <Link href="/esim/united-states" className="text-gray-600 hover:text-blue-600 transition-colors">
+                🇺🇸 USA
+              </Link>
+              <Link href="/esim/japan" className="text-gray-600 hover:text-blue-600 transition-colors">
+                🇯🇵 Japan
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              🌍 Best eSIM Plans Worldwide
+            </h1>
+            <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto">
+              Compare {totalPlans}+ eSIM plans from {allProviders.length} trusted providers across {totalCountries} countries. 
+              Get connected instantly with no roaming charges.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+              <span className="bg-white/20 px-4 py-2 rounded-full">
+                📱 Instant Activation
+              </span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">
+                💰 Best Prices
+              </span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">
+                🌐 {totalCountries} Countries
+              </span>
+              <span className="bg-white/20 px-4 py-2 rounded-full">
+                ⚡ No Physical SIM
+              </span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Quick Stats */}
+      <div className="bg-white shadow-sm border-b">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="p-4">
+              <div className="text-3xl font-bold text-blue-600 mb-2">{totalCountries}</div>
+              <div className="text-gray-600">Countries Covered</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-green-600 mb-2">{totalPlans}+</div>
+              <div className="text-gray-600">eSIM Plans</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-purple-600 mb-2">{allProviders.length}</div>
+              <div className="text-gray-600">Trusted Providers</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-orange-600 mb-2">$3.95</div>
+              <div className="text-gray-600">Starting From</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12">
+        {error && (
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg mb-8">
+            <p className="font-medium">⚠️ Note:</p>
+            <p>{error}. Some features may be limited.</p>
+          </div>
+        )}
+
+        {/* Popular Countries */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">🔥 Most Popular Destinations</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {popularCountries.map((country) => {
+              const countryFlag = {
+                'Turkey': '🇹🇷',
+                'United States': '🇺🇸', 
+                'Japan': '🇯🇵',
+                'Germany': '🇩🇪',
+                'United Kingdom': '🇬🇧',
+                'France': '🇫🇷',
+                'Spain': '🇪🇸',
+                'Italy': '🇮🇹',
+                'Canada': '🇨🇦',
+                'Australia': '🇦🇺'
+              }[country.country] || '🌍';
+
+              const minPrice = Math.min(...country.plans.map(plan => plan.price));
+              
+              return (
+                <Link 
+                  key={country.country}
+                  href={`/esim/${createCountrySlug(country.country)}`}
+                  className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 p-6 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">{countryFlag}</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      {country.country}
+                    </h3>
+                    <div className="space-y-1 text-sm text-gray-600">
+                      <p>{country.plans.length} plans available</p>
+                      <p className="font-semibold text-green-600">From ${minPrice.toFixed(2)}</p>
+                    </div>
+                    <div className="mt-3 inline-flex items-center text-blue-600 group-hover:text-blue-800 transition-colors">
+                      <span className="text-sm">View Plans</span>
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Trust Signals */}
+        <section className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-8 border border-green-200">
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center text-green-700">
+              <span className="mr-2">✅</span>
+              <span className="font-medium">2025 Real Prices</span>
+            </div>
+            <div className="flex items-center text-blue-700">
+              <span className="mr-2">✅</span>
+              <span className="font-medium">Working URLs</span>
+            </div>
+            <div className="flex items-center text-purple-700">
+              <span className="mr-2">✅</span>
+              <span className="font-medium">94+ Plans Compared</span>
+            </div>
+            <div className="flex items-center text-orange-700">
+              <span className="mr-2">✅</span>
+              <span className="font-medium">Expert Reviews</span>
+            </div>
+            <div className="flex items-center text-red-700">
+              <span className="mr-2">✅</span>
+              <span className="font-medium">Updated Daily</span>
+            </div>
+          </div>
+        </section>
+
+        {/* AdSense - Above Fold Leaderboard */}
+        <LeaderboardAd slot="5555286769" />
+
+        {/* Country Selector & Plans */}
+        <section className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">🔍 Compare Plans by Country</h2>
+          
+          <div className="mb-8">
+                         <CountrySelector
+               countries={countryData.map((country) => country.country)}
+               selectedCountry={selectedCountry}
+               onCountryChange={setSelectedCountry}
+             />
+          </div>
+
+          {selectedCountryData && selectedCountryData.plans && (
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {selectedCountryData.country} eSIM Plans
+                </h3>
+                <Link
+                  href={`/esim/${createCountrySlug(selectedCountryData.country)}`}
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  View Detailed Guide
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+              
+              <PlanComparisonTable 
+                plans={selectedCountryData.plans || []}
+                showCountryLinks={false}
+              />
+              
+              {/* Related Blog Links */}
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-2">📚 Expert Guides for {selectedCountryData.country}</h4>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCountryData.country === 'Turkey' && (
+                    <>
+                      <Link 
+                        href="/blog/best-esim-turkey-2025"
+                        className="text-sm bg-white px-3 py-1 rounded-full text-blue-700 hover:bg-blue-100 transition-colors"
+                      >
+                        Best Turkey eSIM 2025 →
+                      </Link>
+                      <Link 
+                        href="/blog/airalo-vs-holafly-turkey"
+                        className="text-sm bg-white px-3 py-1 rounded-full text-blue-700 hover:bg-blue-100 transition-colors"
+                      >
+                        Airalo vs Holafly →
+                      </Link>
+                    </>
+                  )}
+                  {selectedCountryData.country === 'United States' && (
+                    <Link 
+                      href="/blog/best-esim-usa-2025"
+                      className="text-sm bg-white px-3 py-1 rounded-full text-blue-700 hover:bg-blue-100 transition-colors"
+                    >
+                      Best USA eSIM 2025 →
+                    </Link>
+                  )}
+                  {selectedCountryData.country === 'Japan' && (
+                    <Link 
+                      href="/blog/best-esim-japan-2025"
+                      className="text-sm bg-white px-3 py-1 rounded-full text-blue-700 hover:bg-blue-100 transition-colors"
+                    >
+                      Best Japan eSIM 2025 →
+                    </Link>
+                  )}
+                  {selectedCountryData.country === 'Germany' && (
+                    <Link 
+                      href="/blog/best-esim-germany-2025"
+                      className="text-sm bg-white px-3 py-1 rounded-full text-blue-700 hover:bg-blue-100 transition-colors"
+                    >
+                      Best Germany eSIM 2025 →
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* AdSense - Mid Content Rectangle */}
+        <RectangleAd slot="3600041413" />
+
+        {/* Why Choose eSIM */}
+        <section className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">✨ Why Choose eSIM for Travel?</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">⚡</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Instant Activation</h3>
+              <p className="text-gray-600 text-sm">
+                Activate your eSIM as soon as you land. No need to find local stores or wait in queues.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">💰</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">No Roaming Fees</h3>
+              <p className="text-gray-600 text-sm">
+                Avoid expensive roaming charges. Get local rates wherever you travel.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">📱</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Keep Your Number</h3>
+              <p className="text-gray-600 text-sm">
+                Use eSIM for data and keep your original number active for calls and texts.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl text-white">🌍</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Global Coverage</h3>
+              <p className="text-gray-600 text-sm">
+                One app, multiple destinations. Perfect for multi-country trips.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">🚀 How It Works</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">1️⃣</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Choose Your Plan</h3>
+              <p className="text-gray-600">
+                Browse our comparison table and select the perfect eSIM plan for your destination and usage needs.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">2️⃣</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Purchase & Download</h3>
+              <p className="text-gray-600">
+                Buy directly from the provider and receive your eSIM QR code via email instantly.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">3️⃣</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Activate & Connect</h3>
+              <p className="text-gray-600">
+                Scan the QR code on your phone when you arrive and get connected in seconds.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* AdSense - Pre FAQ Leaderboard */}
+        <LeaderboardAd slot="5555286769" />
+
+        {/* FAQ */}
+        <section className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">❓ Frequently Asked Questions</h2>
+          
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">What is an eSIM and how does it work?</h4>
+              <p className="text-gray-700">
+                An eSIM (embedded SIM) is a digital SIM card built into your phone. Instead of inserting a physical card, 
+                you download your plan and activate it with a QR code. It works just like a regular SIM but is much more convenient for travelers.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">Which phones support eSIM?</h4>
+              <p className="text-gray-700">
+                Most modern smartphones support eSIM including iPhone XS and newer, Google Pixel 3 and newer, 
+                Samsung Galaxy S20 and newer, and many other Android devices. Check your phone's settings for eSIM support.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">How do I activate my eSIM?</h4>
+              <p className="text-gray-700">
+                After purchasing, you'll receive a QR code via email. Go to your phone's settings, find "Mobile Data" or "Cellular", 
+                select "Add eSIM" or "Add Data Plan", and scan the QR code. The eSIM will be installed automatically.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">Can I use my eSIM for hotspot/tethering?</h4>
+              <p className="text-gray-700">
+                Most eSIM plans support hotspot/tethering, but some unlimited plans may have restrictions. 
+                Check the plan details in our comparison table before purchasing.
+              </p>
+            </div>
+
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">What happens if I run out of data?</h4>
+              <p className="text-gray-700">
+                Most providers offer top-up options through their mobile apps. Some plans automatically renew, 
+                while others simply stop working. You can usually purchase additional data or a new plan if needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section className="mb-16 bg-white p-8 rounded-lg shadow-md">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-semibold text-gray-700 mb-4">📝 eSIM Travel Guides & Expert Reviews</h2>
+            <p className="text-gray-600 mb-6">
+              Get expert insights, detailed comparisons, and insider tips to find the perfect eSIM for your journey.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <Link href="/blog/best-esim-turkey-2025" className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div className="text-2xl mb-3">🇹🇷</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Best eSIM Turkey 2025</h3>
+              <p className="text-gray-600 text-sm mb-3">Compare 16 Turkey eSIM plans from $1.99. Coverage maps for Istanbul, Cappadocia, Antalya.</p>
+              <span className="text-blue-600 text-sm font-medium">8 min read →</span>
+            </Link>
+            
+            <Link href="/blog/airalo-vs-holafly-turkey" className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div className="text-2xl mb-3">⚔️</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Airalo vs Holafly Comparison</h3>
+              <p className="text-gray-600 text-sm mb-3">Head-to-head comparison of the two most popular eSIM providers for Turkey.</p>
+              <span className="text-blue-600 text-sm font-medium">6 min read →</span>
+            </Link>
+            
+            <Link href="/blog/digital-nomad-esim-guide" className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div className="text-2xl mb-3">💻</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">eSIM for Digital Nomads</h3>
+              <p className="text-gray-600 text-sm mb-3">Multi-country plans, productivity tips, and cost-saving strategies for remote workers.</p>
+              <span className="text-blue-600 text-sm font-medium">10 min read →</span>
+            </Link>
+          </div>
+          
+          <div className="text-center">
+            <Link 
+              href="/blog"
+              className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              View All Guides →
+            </Link>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
+    </>
   );
 }
