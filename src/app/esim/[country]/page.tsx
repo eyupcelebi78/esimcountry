@@ -197,36 +197,36 @@ export default function CountryPage({ params }: CountryPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-        {/* Hero Section */}
-        <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-          <div className="container mx-auto px-4 py-16">
-            <div className="text-center">
-              <div className="text-6xl mb-4">{getCountryFlag(countryName)}</div>
-              <h1 className="text-4xl font-bold mb-4">
-                Best eSIM Plans for {countryName}
-              </h1>
-              <p className="text-xl opacity-90 mb-6 max-w-2xl mx-auto">
-                Compare {plans.length} eSIM plans from {providers.length} trusted providers. 
-                Get connected instantly upon arrival in {countryName} with no roaming charges.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <span className="bg-white/20 px-3 py-1 rounded-full">
-                  📱 Instant Activation
-                </span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">
-                  💰 From ${minPrice.toFixed(2)}
-                </span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">
-                  🌐 {providers.length} Providers
-                </span>
-                <span className="bg-white/20 px-3 py-1 rounded-full">
-                  ⚡ No Physical SIM
-                </span>
-              </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Hero Section */}
+      <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center">
+            <div className="text-6xl mb-4">{getCountryFlag(countryName)}</div>
+            <h1 className="text-4xl font-bold mb-4">
+              Best eSIM Plans for {countryName}
+            </h1>
+            <p className="text-xl opacity-90 mb-6 max-w-2xl mx-auto">
+              Compare {plans.length} eSIM plans from {providers.length} trusted providers. 
+              Get connected instantly upon arrival in {countryName} with no roaming charges.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                📱 Instant Activation
+              </span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                💰 From ${minPrice.toFixed(2)}
+              </span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                🌐 {providers.length} Providers
+              </span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                ⚡ No Physical SIM
+              </span>
             </div>
           </div>
-        </header>
+        </div>
+      </header>
 
         {/* Breadcrumb Navigation */}
         <nav className="bg-white border-b">
@@ -274,200 +274,200 @@ export default function CountryPage({ params }: CountryPageProps) {
           </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{plans.length}</div>
-                <div className="text-sm text-gray-600">Available Plans</div>
+      {/* Quick Stats */}
+      <div className="bg-white shadow-sm border-b">
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div>
+              <div className="text-2xl font-bold text-blue-600">{plans.length}</div>
+              <div className="text-sm text-gray-600">Available Plans</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-green-600">${minPrice.toFixed(2)}</div>
+              <div className="text-sm text-gray-600">Starting Price</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-purple-600">{providers.length}</div>
+              <div className="text-sm text-gray-600">Providers</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-orange-600">${avgPrice.toFixed(2)}</div>
+              <div className="text-sm text-gray-600">Average Price</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {error && (
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg mb-6">
+            <p className="font-medium">⚠️ Note:</p>
+            <p>{error}. Showing available data.</p>
+          </div>
+        )}
+
+        {/* Country Information Section */}
+        {countryInfo && (
+          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Essential {countryName} Travel Information</h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">🏛️ Basic Info</h3>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><strong>Capital:</strong> {countryInfo.capital}</p>
+                  <p><strong>Population:</strong> {(countryInfo.population / 1000000).toFixed(1)}M</p>
+                  <p><strong>Currency:</strong> {countryInfo.currency}</p>
+                  <p><strong>Language:</strong> {countryInfo.language}</p>
+                  <p><strong>Timezone:</strong> {countryInfo.timezone}</p>
+                </div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-green-600">${minPrice.toFixed(2)}</div>
-                <div className="text-sm text-gray-600">Starting Price</div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">📶 Network Info</h3>
+                <div className="space-y-1 text-sm text-gray-600">
+                  <p><strong>Avg Speed:</strong> {countryInfo.internet_speed_avg_mbps} Mbps</p>
+                  <p><strong>Emergency:</strong> {countryInfo.emergency_number}</p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">{countryInfo.network_coverage_notes}</p>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-600">{providers.length}</div>
-                <div className="text-sm text-gray-600">Providers</div>
+
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-900 mb-2">🗓️ Best Time to Visit</h3>
+                <p className="text-sm text-gray-600">{countryInfo.best_visit_months}</p>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-orange-600">${avgPrice.toFixed(2)}</div>
-                <div className="text-sm text-gray-600">Average Price</div>
+            </div>
+
+            {/* Popular Cities */}
+            <div className="mb-6">
+              <h3 className="font-semibold text-gray-900 mb-3">🏙️ Popular Destinations</h3>
+              <div className="flex flex-wrap gap-2">
+                {countryInfo.popular_cities.map((city, index) => (
+                  <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
+                    {city}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Travel Tips */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-3">💡 Essential Travel Tips</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {countryInfo.travel_tips.map((tip, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <p className="text-sm text-gray-600">{tip}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Cost Comparison */}
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">💰 eSIM vs Local SIM Cost Comparison</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
+              <h3 className="font-semibold text-green-800 mb-2">✅ eSIM Advantages</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li>• No registration hassle</li>
+                <li>• Instant activation</li>
+                <li>• Keep your home number active</li>
+                <li>• Buy before travel</li>
+                <li>• Multiple plans available</li>
+              </ul>
+              {countryInfo && (
+                <p className="text-xs text-gray-600 mt-3 p-2 bg-white/50 rounded">
+                  {countryInfo.data_costs_local_comparison}
+                </p>
+              )}
+            </div>
+            
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg border border-yellow-200">
+              <h3 className="font-semibold text-orange-800 mb-2">📱 Local SIM Alternative</h3>
+              {countryInfo ? (
+                <p className="text-sm text-gray-700">{countryInfo.local_sim_alternative}</p>
+              ) : (
+                <p className="text-sm text-gray-700">Local SIM cards may require registration and can be time-consuming to purchase.</p>
+              )}
+              <div className="mt-3 p-2 bg-white/50 rounded">
+                <p className="text-xs text-gray-600">
+                  <strong>Price Range:</strong> ${minPrice.toFixed(2)} - ${maxPrice.toFixed(2)} | 
+                  <strong>Average:</strong> ${avgPrice.toFixed(2)}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main Content */}
-        <main className="container mx-auto px-4 py-8">
-          {error && (
-            <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg mb-6">
-              <p className="font-medium">⚠️ Note:</p>
-              <p>{error}. Showing available data.</p>
-            </div>
-          )}
-
-          {/* Country Information Section */}
-          {countryInfo && (
-            <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Essential {countryName} Travel Information</h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">🏛️ Basic Info</h3>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <p><strong>Capital:</strong> {countryInfo.capital}</p>
-                    <p><strong>Population:</strong> {(countryInfo.population / 1000000).toFixed(1)}M</p>
-                    <p><strong>Currency:</strong> {countryInfo.currency}</p>
-                    <p><strong>Language:</strong> {countryInfo.language}</p>
-                    <p><strong>Timezone:</strong> {countryInfo.timezone}</p>
-                  </div>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">📶 Network Info</h3>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <p><strong>Avg Speed:</strong> {countryInfo.internet_speed_avg_mbps} Mbps</p>
-                    <p><strong>Emergency:</strong> {countryInfo.emergency_number}</p>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-2">{countryInfo.network_coverage_notes}</p>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">🗓️ Best Time to Visit</h3>
-                  <p className="text-sm text-gray-600">{countryInfo.best_visit_months}</p>
-                </div>
-              </div>
-
-              {/* Popular Cities */}
-              <div className="mb-6">
-                <h3 className="font-semibold text-gray-900 mb-3">🏙️ Popular Destinations</h3>
-                <div className="flex flex-wrap gap-2">
-                  {countryInfo.popular_cities.map((city, index) => (
-                    <span key={index} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                      {city}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Travel Tips */}
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-3">💡 Essential Travel Tips</h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {countryInfo.travel_tips.map((tip, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <p className="text-sm text-gray-600">{tip}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Cost Comparison */}
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">💰 eSIM vs Local SIM Cost Comparison</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 rounded-lg border border-green-200">
-                <h3 className="font-semibold text-green-800 mb-2">✅ eSIM Advantages</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• No registration hassle</li>
-                  <li>• Instant activation</li>
-                  <li>• Keep your home number active</li>
-                  <li>• Buy before travel</li>
-                  <li>• Multiple plans available</li>
-                </ul>
-                {countryInfo && (
-                  <p className="text-xs text-gray-600 mt-3 p-2 bg-white/50 rounded">
-                    {countryInfo.data_costs_local_comparison}
-                  </p>
-                )}
-              </div>
-              
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg border border-yellow-200">
-                <h3 className="font-semibold text-orange-800 mb-2">📱 Local SIM Alternative</h3>
-                {countryInfo ? (
-                  <p className="text-sm text-gray-700">{countryInfo.local_sim_alternative}</p>
-                ) : (
-                  <p className="text-sm text-gray-700">Local SIM cards may require registration and can be time-consuming to purchase.</p>
-                )}
-                <div className="mt-3 p-2 bg-white/50 rounded">
-                  <p className="text-xs text-gray-600">
-                    <strong>Price Range:</strong> ${minPrice.toFixed(2)} - ${maxPrice.toFixed(2)} | 
-                    <strong>Average:</strong> ${avgPrice.toFixed(2)}
-                  </p>
-                </div>
-              </div>
-            </div>
+        {/* Plans Comparison Table */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+          <div className="p-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900">📊 Compare All {countryName} eSIM Plans</h2>
+            <p className="text-gray-600 mt-2">
+              Updated {new Date(lastChecked).toLocaleDateString()}. Click on any plan to visit the provider's website.
+            </p>
           </div>
-
-          {/* Plans Comparison Table */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-900">📊 Compare All {countryName} eSIM Plans</h2>
-              <p className="text-gray-600 mt-2">
-                Updated {new Date(lastChecked).toLocaleDateString()}. Click on any plan to visit the provider's website.
-              </p>
-            </div>
-            
-            <PlanComparisonTable plans={plans} showCountryLinks={false} />
-          </div>
+          
+          <PlanComparisonTable plans={plans} showCountryLinks={false} />
+        </div>
 
           {/* AdSense - Before FAQ */}
           <RectangleAd slot="3600041413" />
 
-          {/* FAQ Section */}
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">❓ Frequently Asked Questions</h2>
-            
-            <div className="space-y-4">
+        {/* FAQ Section */}
+        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">❓ Frequently Asked Questions</h2>
+          
+          <div className="space-y-4">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">How do I activate an eSIM in {countryName}?</h4>
                 <p className="text-gray-700">
-                  Download the eSIM before traveling, then activate it when you arrive in {countryName}. 
-                  Most providers offer QR codes that can be scanned in your phone's settings.
-                </p>
+                Download the eSIM before traveling, then activate it when you arrive in {countryName}. 
+                Most providers offer QR codes that can be scanned in your phone's settings.
+              </p>
               </div>
 
               <div className="border border-gray-200 rounded-lg p-4">
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">Which eSIM provider is best for {countryName}?</h4>
                 <p className="text-gray-700">
-                  It depends on your needs. For unlimited data, consider Holafly. For budget options, 
-                  Airalo and Nomad offer great value. Check our comparison table above for detailed pricing.
-                </p>
+                It depends on your needs. For unlimited data, consider Holafly. For budget options, 
+                Airalo and Nomad offer great value. Check our comparison table above for detailed pricing.
+              </p>
               </div>
 
               <div className="border border-gray-200 rounded-lg p-4">
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">Can I use hotspot/tethering with these eSIMs?</h4>
                 <p className="text-gray-700">
-                  Most providers allow hotspot sharing, but some unlimited plans may restrict it. 
-                  Check the "Hotspot" column in our comparison table for specific details.
-                </p>
+                Most providers allow hotspot sharing, but some unlimited plans may restrict it. 
+                Check the "Hotspot" column in our comparison table for specific details.
+              </p>
               </div>
 
               <div className="border border-gray-200 rounded-lg p-4">
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">What happens if I run out of data?</h4>
                 <p className="text-gray-700">
-                  Most providers offer top-up options through their apps. Some plans automatically 
-                  renew, while others stop service. Check your provider's terms before purchasing.
-                </p>
+                Most providers offer top-up options through their apps. Some plans automatically 
+                renew, while others stop service. Check your provider's terms before purchasing.
+              </p>
               </div>
-            </div>
           </div>
+        </div>
 
-          {/* Navigation */}
-          <div className="text-center">
-            <Link 
-              href="/" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              ← Browse Other Countries
-            </Link>
-          </div>
-        </main>
-      </div>
+        {/* Navigation */}
+        <div className="text-center">
+          <Link 
+            href="/" 
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            ← Browse Other Countries
+          </Link>
+        </div>
+      </main>
+    </div>
     </>
   );
 } 
