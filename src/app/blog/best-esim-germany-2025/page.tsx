@@ -568,22 +568,22 @@ export default function BestESIMGermany2025() {
           <section className="border-t border-gray-200 pt-8">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Related Articles</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/blog/best-esim-france-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <Link href="/blog/best-esim-turkey-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div className="text-sm text-gray-600 mb-1">Travel Guide</div>
-                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM France 2025</h4>
-                <p className="text-sm text-gray-600">Complete guide to France eSIM plans for Paris, Lyon, and the French Riviera.</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM Turkey 2025</h4>
+                <p className="text-sm text-gray-600">Complete guide to Turkey eSIM plans for Istanbul, Cappadocia, and Antalya.</p>
               </Link>
               
-              <Link href="/blog/best-esim-italy-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <Link href="/blog/best-esim-japan-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div className="text-sm text-gray-600 mb-1">Travel Guide</div>
-                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM Italy 2025</h4>
-                <p className="text-sm text-gray-600">Discover the best eSIM options for Italy including Rome, Florence, and Venice.</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM Japan 2025</h4>
+                <p className="text-sm text-gray-600">Discover the best eSIM options for Japan including Tokyo, Osaka, and Kyoto.</p>
               </Link>
               
-              <Link href="/blog/eu-esim-roaming-guide" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <div className="text-sm text-gray-600 mb-1">Tech Guide</div>
-                <h4 className="font-semibold text-gray-900 mb-2">EU eSIM Roaming Guide</h4>
-                <p className="text-sm text-gray-600">Understanding eSIM roaming across European Union countries and regulations.</p>
+              <Link href="/blog/airalo-vs-holafly-turkey" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <div className="text-sm text-gray-600 mb-1">Comparison</div>
+                <h4 className="font-semibold text-gray-900 mb-2">Airalo vs Holafly Comparison</h4>
+                <p className="text-sm text-gray-600">Head-to-head comparison of the two most popular eSIM providers.</p>
               </Link>
             </div>
           </section>

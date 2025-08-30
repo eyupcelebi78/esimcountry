@@ -515,10 +515,10 @@ export default function Home() {
               <span className="text-blue-600 text-sm font-medium">6 min read →</span>
             </Link>
             
-            <Link href="/blog/digital-nomad-esim-guide" className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <div className="text-2xl mb-3">💻</div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">eSIM for Digital Nomads</h3>
-              <p className="text-gray-600 text-sm mb-3">Multi-country plans, productivity tips, and cost-saving strategies for remote workers.</p>
+            <Link href="/blog/best-esim-usa-2025" className="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <div className="text-2xl mb-3">🇺🇸</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Best USA eSIM 2025</h3>
+              <p className="text-gray-600 text-sm mb-3">Complete guide to USA eSIM plans. T-Mobile, Verizon, AT&T coverage comparison.</p>
               <span className="text-blue-600 text-sm font-medium">10 min read →</span>
             </Link>
           </div>

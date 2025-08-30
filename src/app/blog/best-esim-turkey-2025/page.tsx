@@ -288,17 +288,17 @@ export default function BestESimTurkey2025() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-semibold mb-4">🔗 Other Provider Reviews:</h4>
               <div className="grid md:grid-cols-2 gap-3">
-                <Link href="/blog/nomad-esim-turkey-review" className="text-blue-600 hover:underline">
-                  📱 Nomad eSIM Turkey Review →
+                <Link href="/blog/best-esim-usa-2025" className="text-blue-600 hover:underline">
+                  🇺🇸 Best USA eSIM 2025 →
                 </Link>
-                <Link href="/blog/holafly-turkey-unlimited-review" className="text-blue-600 hover:underline">
-                  📱 Holafly Turkey Unlimited Review →
+                <Link href="/blog/best-esim-japan-2025" className="text-blue-600 hover:underline">
+                  🇯🇵 Best Japan eSIM 2025 →
                 </Link>
-                <Link href="/blog/ubigi-turkey-premium-review" className="text-blue-600 hover:underline">
-                  📱 Ubigi Turkey Premium Review →
+                <Link href="/blog/best-esim-germany-2025" className="text-blue-600 hover:underline">
+                  🇩🇪 Best Germany eSIM 2025 →
                 </Link>
-                <Link href="/blog/gigsky-turkey-review" className="text-blue-600 hover:underline">
-                  📱 GigSky Turkey Review →
+                <Link href="/blog/airalo-vs-holafly-turkey" className="text-blue-600 hover:underline">
+                  ⚔️ Airalo vs Holafly Turkey →
                 </Link>
               </div>
             </div>
@@ -482,14 +482,14 @@ export default function BestESimTurkey2025() {
                 <p className="text-sm text-gray-600 mt-1">Detailed comparison of the two most popular providers</p>
               </Link>
               
-              <Link href="/blog/istanbul-esim-guide" className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-blue-600">Istanbul eSIM Guide: Coverage & Speed Tests</h4>
-                <p className="text-sm text-gray-600 mt-1">Best eSIM options for Turkey's largest city</p>
+              <Link href="/blog/best-esim-japan-2025" className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-blue-600">Best Japan eSIM 2025: Complete Guide</h4>
+                <p className="text-sm text-gray-600 mt-1">NTT Docomo, SoftBank coverage comparison</p>
               </Link>
               
-              <Link href="/blog/digital-nomad-turkey-esim" className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                <h4 className="font-semibold text-blue-600">Turkey eSIM for Digital Nomads</h4>
-                <p className="text-sm text-gray-600 mt-1">Long-term data solutions for remote workers</p>
+              <Link href="/blog/best-esim-usa-2025" className="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                <h4 className="font-semibold text-blue-600">Best USA eSIM 2025: Complete Guide</h4>
+                <p className="text-sm text-gray-600 mt-1">T-Mobile, Verizon, AT&T network comparison</p>
               </Link>
               
               <Link href="/esim/germany" className="border rounded-lg p-4 hover:shadow-md transition-shadow">

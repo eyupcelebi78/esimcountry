@@ -30,20 +30,20 @@ export default function NotFound() {
               <Link href="/esim/turkey" className="text-blue-600 hover:text-blue-800 hover:underline">
                 🇹🇷 Turkey
               </Link>
-              <Link href="/esim/germany" className="text-blue-600 hover:text-blue-800 hover:underline">
-                🇩🇪 Germany
-              </Link>
-              <Link href="/esim/france" className="text-blue-600 hover:text-blue-800 hover:underline">
-                🇫🇷 France
-              </Link>
-              <Link href="/esim/spain" className="text-blue-600 hover:text-blue-800 hover:underline">
-                🇪🇸 Spain
-              </Link>
-              <Link href="/esim/italy" className="text-blue-600 hover:text-blue-800 hover:underline">
-                🇮🇹 Italy
+              <Link href="/esim/united-states" className="text-blue-600 hover:text-blue-800 hover:underline">
+                🇺🇸 United States
               </Link>
               <Link href="/esim/japan" className="text-blue-600 hover:text-blue-800 hover:underline">
                 🇯🇵 Japan
+              </Link>
+              <Link href="/esim/germany" className="text-blue-600 hover:text-blue-800 hover:underline">
+                🇩🇪 Germany
+              </Link>
+              <Link href="/blog" className="text-blue-600 hover:text-blue-800 hover:underline">
+                📝 Blog Articles
+              </Link>
+              <Link href="/" className="text-blue-600 hover:text-blue-800 hover:underline">
+                🏠 Homepage
               </Link>
             </div>
           </div>

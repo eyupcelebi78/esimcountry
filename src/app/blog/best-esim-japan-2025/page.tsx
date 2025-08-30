@@ -719,16 +719,16 @@ export default function BestESIMJapan2025() {
                 <p className="text-sm text-gray-600">Complete guide to USA eSIM plans with coverage maps and provider comparisons.</p>
               </Link>
               
-              <Link href="/blog/best-esim-south-korea-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <Link href="/blog/best-esim-turkey-2025" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div className="text-sm text-gray-600 mb-1">Travel Guide</div>
-                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM South Korea 2025</h4>
-                <p className="text-sm text-gray-600">Discover the best eSIM options for South Korea including Seoul and Busan.</p>
+                <h4 className="font-semibold text-gray-900 mb-2">Best eSIM Turkey 2025</h4>
+                <p className="text-sm text-gray-600">Discover the best eSIM options for Turkey including Istanbul and Cappadocia.</p>
               </Link>
               
-              <Link href="/blog/japan-travel-tips-esim" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                <div className="text-sm text-gray-600 mb-1">Travel Tips</div>
-                <h4 className="font-semibold text-gray-900 mb-2">Japan Travel Tips with eSIM</h4>
-                <p className="text-sm text-gray-600">Essential apps, cultural tips, and connectivity advice for Japan travelers.</p>
+              <Link href="/blog/airalo-vs-holafly-turkey" className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                <div className="text-sm text-gray-600 mb-1">Comparison</div>
+                <h4 className="font-semibold text-gray-900 mb-2">Airalo vs Holafly Turkey eSIM</h4>
+                <p className="text-sm text-gray-600">Head-to-head comparison of the two most popular eSIM providers.</p>
               </Link>
             </div>
           </section>
