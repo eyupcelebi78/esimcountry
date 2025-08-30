@@ -17,17 +17,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'australia'
   ]
   
-  // Blog posts
+  // Blog posts - sadece gerçekte var olanlar
   const blogPosts = [
     'best-esim-turkey-2025',
     'best-esim-usa-2025',
     'best-esim-japan-2025',
     'best-esim-germany-2025',
-    'airalo-vs-holafly-turkey',
-    'istanbul-esim-guide',
-    'saily-esim-review-2025',
-    'digital-nomad-esim-guide',
-    'cappadocia-esim-coverage'
+    'airalo-vs-holafly-turkey'
   ]
 
   // Main pages
