@@ -117,6 +117,12 @@ export default function Home() {
               <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition-colors">
                 📝 Blog
               </Link>
+              <Link href="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
+                👥 About
+              </Link>
+              <Link href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+                📧 Contact
+              </Link>
               <Link href="/esim/turkey" className="text-gray-600 hover:text-blue-600 transition-colors">
                 🇹🇷 Turkey
               </Link>
@@ -533,6 +539,68 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            
+            {/* Company Info */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">🌍 eSIM Country</h3>
+              <p className="text-gray-300 mb-4">
+                Your trusted source for unbiased eSIM comparisons and expert travel connectivity advice.
+              </p>
+              <p className="text-gray-400 text-sm">
+                Compare 94+ plans from 15+ providers across 10+ countries.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                <li><Link href="/blog" className="text-gray-300 hover:text-white transition-colors">📝 Blog</Link></li>
+                <li><Link href="/about" className="text-gray-300 hover:text-white transition-colors">👥 About Us</Link></li>
+                <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors">📧 Contact</Link></li>
+              </ul>
+            </div>
+
+            {/* Popular Countries */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Popular Destinations</h4>
+              <ul className="space-y-2">
+                <li><Link href="/esim/turkey" className="text-gray-300 hover:text-white transition-colors">🇹🇷 Turkey eSIM</Link></li>
+                <li><Link href="/esim/united-states" className="text-gray-300 hover:text-white transition-colors">🇺🇸 USA eSIM</Link></li>
+                <li><Link href="/esim/japan" className="text-gray-300 hover:text-white transition-colors">🇯🇵 Japan eSIM</Link></li>
+                <li><Link href="/esim/germany" className="text-gray-300 hover:text-white transition-colors">🇩🇪 Germany eSIM</Link></li>
+              </ul>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2">
+                <li><Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
+              </ul>
+              <div className="mt-6">
+                <p className="text-gray-400 text-sm">Follow us:</p>
+                <div className="flex space-x-4 mt-2">
+                  <a href="https://twitter.com/esimcountry" className="text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+                  <a href="https://facebook.com/esimcountry" className="text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-400">
+              &copy; 2025 eSIM Country. All rights reserved. | Last updated: January 2025
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
     </>
   );
