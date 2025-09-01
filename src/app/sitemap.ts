@@ -23,7 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'best-esim-usa-2025',
     'best-esim-japan-2025',
     'best-esim-germany-2025',
-    'airalo-vs-holafly-turkey'
+    'airalo-vs-holafly-turkey',
+    'saily-esim-review-2025'
   ]
 
   // Main pages

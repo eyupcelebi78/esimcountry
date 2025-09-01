@@ -61,6 +61,15 @@ const blogPosts = [
     category: 'Comparisons',
     featured: false
   },
+  {
+    slug: 'saily-esim-review-2025',
+    title: 'Saily eSIM Review 2025: Complete Testing Guide & Pricing',
+    excerpt: 'Comprehensive Saily eSIM review with real-world testing results across 150+ countries. Coverage, pricing, pros & cons analysis.',
+    date: 'January 2025',
+    readTime: '12 min read',
+    category: 'Provider Reviews',
+    featured: true
+  },
 ];
 
 const categories = [
