@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "eSIM Country - Compare Best eSIM Plans 2025 | Real Prices from $1.99",
-  description: "Compare 94+ eSIM plans from 15+ providers across 10 countries. Real 2025 prices from $1.99. Saily, Airalo, Nomad, Holafly reviews. Expert guides & instant activation.",
-  keywords: "eSIM comparison 2025, best eSIM turkey, airalo vs holafly, saily esim, nomad esim, travel esim, international data plans, esim reviews",
+  title: "Best eSIM Plans 2025 - Compare 94+ Plans from Top Providers | eSIM Country",
+  description: "Find the best eSIM plans 2025 ✅ Compare 94+ plans from Airalo, Holafly, Nomad, Saily ✅ Real prices from $3.95 ✅ Expert reviews ✅ Instant activation ✅ 10+ countries",
+  keywords: "best esim plans, best esim plans 2025, cheapest esim plans, international esim plans, esim comparison, esim providers, travel esim, airalo vs holafly, unlimited esim plans, esim reviews",
   authors: [{ name: "eSIM Country Expert Team" }],
   creator: "eSIM Country",
   publisher: "eSIM Country",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "eSIM Country - Compare Best eSIM Plans 2025",
-    description: "Compare 94+ eSIM plans from 15+ providers. Real prices from $1.99. Expert reviews and instant activation.",
+    title: "Best eSIM Plans 2025 - Compare 94+ Plans from Top Providers",
+    description: "Find the best eSIM plans 2025. Compare 94+ plans from Airalo, Holafly, Nomad, Saily. Real prices, expert reviews, instant activation.",
     type: "website",
     locale: 'en_US',
     url: 'https://esimcountry.fyi',

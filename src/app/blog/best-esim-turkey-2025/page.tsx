@@ -5,7 +5,7 @@ import { LeaderboardAd, RectangleAd } from '@/components/AdSense';
 export const metadata: Metadata = {
   title: 'Best eSIM Turkey 2025: Complete Guide & Price Comparison | 16 Plans from $1.99',
   description: 'Find the best eSIM for Turkey in 2025. Compare 16 plans from Saily ($1.99), Airalo, Nomad, Holafly. Coverage maps for Istanbul, Cappadocia, Antalya. Setup guide included.',
-  keywords: 'best esim turkey 2025, turkey esim comparison, saily esim turkey, airalo turkey, nomad esim turkey, holafly turkey esim, istanbul esim, cappadocia esim coverage',
+  keywords: 'best esim turkey 2025, turkey esim comparison, best esim plans, saily esim turkey, airalo turkey, nomad esim turkey, holafly turkey esim, istanbul esim, cappadocia esim coverage',
   alternates: {
     canonical: '/blog/best-esim-turkey-2025',
   },
@@ -87,7 +87,8 @@ export default function BestESimTurkey2025() {
               Best eSIM for Turkey 2025: Complete Guide & Price Comparison
             </h1>
             <p className="text-xl text-gray-700 mb-4">
-              Compare 16 Turkey eSIM plans from 7 providers. Real 2025 prices starting from $1.99.
+              Compare 16 Turkey eSIM plans from 7 providers. Real 2025 prices starting from $1.99. 
+              Looking for other destinations? Check our <Link href="/best-esim-plans" className="text-red-600 hover:text-red-800 font-semibold underline">complete guide to the best eSIM plans</Link> worldwide.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <span className="bg-red-200 px-3 py-1 rounded-full text-red-800">Updated: January 2025</span>
@@ -132,7 +133,9 @@ export default function BestESimTurkey2025() {
               Planning a trip to Turkey in 2025? Whether you're exploring the historic streets of <strong>Istanbul</strong>, 
               floating over <strong>Cappadocia</strong> in a hot air balloon, or relaxing on the beaches of <strong>Antalya</strong>, 
               staying connected is essential. This comprehensive guide compares <strong>16 Turkey eSIM plans</strong> from 
-              <strong>7 trusted providers</strong> to help you find the perfect data solution.
+              <strong>7 trusted providers</strong> to help you find the perfect data solution. For a broader comparison, 
+              see our <Link href="/best-esim-plans" className="text-blue-600 hover:text-blue-800 font-semibold underline">
+              complete guide to the best eSIM plans</Link> covering 10+ countries.
             </p>
             
             <p className="text-gray-700">

@@ -6,6 +6,7 @@ import { createCountrySlug, CountryData } from '@/lib/supabase';
 import CountrySelector from '@/components/CountrySelector';
 import PlanComparisonTable from '@/components/PlanComparisonTable';
 import { LeaderboardAd, RectangleAd } from '@/components/AdSense';
+import ProviderComparison from '@/components/ProviderComparison';
 
 export default function Home() {
   const [countryData, setCountryData] = useState<CountryData[]>([]);
@@ -142,25 +143,39 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              🌍 Best eSIM Plans Worldwide
+              🌍 Best eSIM Plans 2025 - Compare 94+ Plans
             </h1>
-            <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto">
-              Compare {totalPlans}+ eSIM plans from {allProviders.length} trusted providers across {totalCountries} countries. 
-              Get connected instantly with no roaming charges.
+            <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-4xl mx-auto">
+              Find the <strong>best eSIM plans</strong> from {allProviders.length} top providers including Airalo, Holafly, Nomad & Saily. 
+              Compare real 2025 prices across {totalCountries} countries with expert reviews and instant activation.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base mb-8">
               <span className="bg-white/20 px-4 py-2 rounded-full">
                 📱 Instant Activation
               </span>
               <span className="bg-white/20 px-4 py-2 rounded-full">
-                💰 Best Prices
+                💰 Best Prices 2025
               </span>
               <span className="bg-white/20 px-4 py-2 rounded-full">
                 🌐 {totalCountries} Countries
               </span>
               <span className="bg-white/20 px-4 py-2 rounded-full">
-                ⚡ No Physical SIM
+                ⚡ Expert Reviews
               </span>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link 
+                href="/best-esim-plans" 
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+              >
+                🏆 View Best Plans
+              </Link>
+              <a 
+                href="#comparison" 
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"
+              >
+                📊 Compare Now
+              </a>
             </div>
           </div>
         </div>
@@ -192,6 +207,9 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
+        
+        {/* Provider Comparison Section */}
+        <ProviderComparison />
         {error && (
           <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg mb-8">
             <p className="font-medium">⚠️ Note:</p>
