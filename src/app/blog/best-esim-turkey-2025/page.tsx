@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Best eSIM Turkey 2025: Complete Guide & Price Comparison | 16 Plans from $1.99',
   description: 'Find the best eSIM for Turkey in 2025. Compare 16 plans from Saily ($1.99), Airalo, Nomad, Holafly. Coverage maps for Istanbul, Cappadocia, Antalya. Setup guide included.',
   keywords: 'best esim turkey 2025, turkey esim comparison, saily esim turkey, airalo turkey, nomad esim turkey, holafly turkey esim, istanbul esim, cappadocia esim coverage',
+  alternates: {
+    canonical: '/blog/best-esim-turkey-2025',
+  },
   openGraph: {
     title: 'Best eSIM Turkey 2025: Complete Guide & Price Comparison',
     description: 'Compare 16 Turkey eSIM plans from 7 providers. Real 2025 prices from $1.99. Coverage maps and setup guide included.',

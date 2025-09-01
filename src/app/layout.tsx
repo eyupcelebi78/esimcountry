@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [{ name: "eSIM Country Expert Team" }],
   creator: "eSIM Country",
   publisher: "eSIM Country",
-  metadataBase: new URL('https://esimcountry.com'),
+  metadataBase: new URL('https://esimcountry.fyi'),
   alternates: {
     canonical: '/',
   },
@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     description: "Compare 94+ eSIM plans from 15+ providers. Real prices from $1.99. Expert reviews and instant activation.",
     type: "website",
     locale: 'en_US',
-    url: 'https://esimcountry.com',
+    url: 'https://esimcountry.fyi',
     siteName: 'eSIM Country',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'eSIM Country - Best eSIM Comparison 2025',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'eSIM Country - Compare Best eSIM Plans 2025',
     description: 'Compare 94+ eSIM plans from 15+ providers. Real prices from $1.99.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.svg'],
   },
   verification: {
     google: "google-site-verification-code-here",
@@ -66,8 +66,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'eSIM Country',
-  url: 'https://esimcountry.com',
-  logo: 'https://esimcountry.com/logo.png',
+  url: 'https://esimcountry.fyi',
+  logo: 'https://esimcountry.fyi/logo.png',
   description: 'Compare the best eSIM plans from 15+ providers across 10+ countries with real 2025 prices.',
   sameAs: [
     'https://twitter.com/esimcountry',
@@ -100,7 +100,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>

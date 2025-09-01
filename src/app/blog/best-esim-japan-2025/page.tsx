@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Best eSIM Japan 2025: Complete Guide & Price Comparison | 50+ Plans from $2.99',
   description: 'Find the best eSIM for Japan in 2025. Compare 50+ plans from Saily, Airalo, Nomad, Holafly. Coverage for Tokyo, Osaka, Kyoto. NTT DoCoMo, SoftBank, au networks.',
   keywords: 'best esim japan 2025, japan esim comparison, best esim tokyo, saily esim japan, airalo japan, nomad esim japan, japan travel esim, docomo esim, softbank esim',
+  alternates: {
+    canonical: '/blog/best-esim-japan-2025',
+  },
   openGraph: {
     title: 'Best eSIM Japan 2025: Complete Guide & Price Comparison',
     description: 'Compare 50+ Japan eSIM plans from 8+ providers. Real 2025 prices from $2.99. Coverage maps for Tokyo, Osaka, Kyoto included.',

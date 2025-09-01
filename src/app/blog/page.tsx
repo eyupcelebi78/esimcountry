@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'eSIM Travel Guides & Comparisons | Latest 2025 Reviews',
   description: 'Expert eSIM guides, provider comparisons, and travel tips. Discover the best eSIM deals for Turkey, Germany, USA, Japan and more. Updated daily with real prices.',
   keywords: 'esim guide, esim comparison, travel esim, best esim 2025, airalo vs holafly, nomad esim review',
+  alternates: {
+    canonical: '/blog',
+  },
   openGraph: {
     title: 'eSIM Travel Guides & Expert Comparisons',
     description: 'Get expert eSIM advice, compare providers, and find the best deals for your next trip.',

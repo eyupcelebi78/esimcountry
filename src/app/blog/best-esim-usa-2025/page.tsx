@@ -3,12 +3,15 @@ import { Metadata } from 'next';
 import { LeaderboardAd, RectangleAd } from '@/components/AdSense';
 
 export const metadata: Metadata = {
-  title: 'Best eSIM USA 2025: Complete Guide & Price Comparison | 60+ Plans from $1.48',
-  description: 'Find the best eSIM for USA in 2025. Compare 60+ plans from Saily, Airalo, Nomad, Holafly. Coverage maps for NYC, LA, Chicago. Verizon, T-Mobile, AT&T networks.',
-  keywords: 'best esim usa 2025, usa esim comparison, best esim united states, verizon esim, t-mobile esim, at&t esim, new york esim, california esim',
+  title: 'Best eSIM USA 2025: Complete Guide & Price Comparison | T-Mobile, Verizon, AT&T',
+  description: 'Find the best eSIM for USA in 2025. Compare 50+ plans from top providers. T-Mobile, Verizon, AT&T network coverage. Real prices from $3.49 with setup guide.',
+  keywords: 'best esim usa 2025, usa esim comparison, t-mobile esim, verizon esim, att esim, america esim plans, us travel esim, unlimited usa esim',
+  alternates: {
+    canonical: '/blog/best-esim-usa-2025',
+  },
   openGraph: {
     title: 'Best eSIM USA 2025: Complete Guide & Price Comparison',
-    description: 'Compare 60+ USA eSIM plans from 10+ providers. Real 2025 prices from $1.48. Coverage maps for NYC, LA, Chicago included.',
+    description: 'Compare 50+ USA eSIM plans from 8+ providers. Real 2025 prices from $3.49. T-Mobile, Verizon, AT&T coverage included.',
     type: 'article',
   },
 };

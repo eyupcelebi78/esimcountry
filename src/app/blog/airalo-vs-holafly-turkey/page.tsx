@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Airalo vs Holafly Turkey eSIM 2025: Which is Better? | Complete Comparison",
   description: "Detailed comparison of Airalo vs Holafly Turkey eSIMs. Compare prices, data limits, coverage, and features. Find the best Turkey eSIM for your travel needs in 2025.",
   keywords: "airalo vs holafly turkey, turkey esim comparison, best turkey esim 2025, airalo turkey review, holafly turkey review",
+  alternates: {
+    canonical: '/blog/airalo-vs-holafly-turkey',
+  },
   openGraph: {
     title: "Airalo vs Holafly Turkey eSIM 2025: Complete Comparison",
     description: "Detailed comparison of Airalo vs Holafly Turkey eSIMs. Compare prices, data limits, coverage, and features.",

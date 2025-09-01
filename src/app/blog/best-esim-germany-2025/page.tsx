@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Best eSIM Germany 2025: Complete Guide & Price Comparison | 40+ Plans from $2.49',
   description: 'Find the best eSIM for Germany in 2025. Compare 40+ plans from Saily, Airalo, Nomad, Holafly. Coverage for Berlin, Munich, Hamburg. Vodafone, Telekom, O2 networks.',
   keywords: 'best esim germany 2025, germany esim comparison, berlin esim, munich esim, saily esim germany, airalo germany, nomad esim, deutschland esim plans',
+  alternates: {
+    canonical: '/blog/best-esim-germany-2025',
+  },
   openGraph: {
     title: 'Best eSIM Germany 2025: Complete Guide & Price Comparison',
     description: 'Compare 40+ Germany eSIM plans from 7+ providers. Real 2025 prices from $2.49. Coverage maps for Berlin, Munich, Hamburg included.',
