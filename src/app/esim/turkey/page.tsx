@@ -1,13 +1,5 @@
 'use client';
 
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: '/esim/turkey',
-  },
-}
-
 import { useState, useEffect } from 'react';
 import { ESIMPlan } from '@/lib/supabase';
 import PlanComparisonTable from '@/components/PlanComparisonTable';

@@ -1,13 +1,5 @@
 'use client';
 
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  alternates: {
-    canonical: '/',
-  },
-}
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createCountrySlug, CountryData } from '@/lib/supabase';
