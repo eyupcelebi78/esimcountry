@@ -3,24 +3,24 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://esimcountry.fyi'),
-  alternates: { canonical: '/iphone-12-mini-esim' },
+  alternates: { canonical: '/blog/iphone-12-mini-esim' },
   title: 'iPhone 12 mini eSIM (2025): Compatibility, Setup, Dual SIM',
   description: 'Does iPhone 12 mini support eSIM? Yes. Learn how to activate eSIM, use dual SIM, fix common issues, and compare travel eSIM plans by country.',
   openGraph: {
     title: 'iPhone 12 mini eSIM (2025): Compatibility, Setup, Dual SIM',
     description: 'Full iPhone 12 mini eSIM guide: activation, dual SIM, troubleshooting, and plan comparison.',
-    url: 'https://esimcountry.fyi/iphone-12-mini-esim',
+    url: 'https://esimcountry.fyi/blog/iphone-12-mini-esim',
     type: 'article',
   },
 }
 
 export default function Page() {
   const related = [
-    '/iphone-12-esim',
-    '/does-iphone-12-have-esim',
-    '/does-iphone-12-support-esim',
-    '/is-iphone-12-esim-compatible',
-    '/does-iphone-12-pro-have-esim',
+    '/blog/iphone-12-esim',
+    '/blog/does-iphone-12-have-esim',
+    '/blog/does-iphone-12-support-esim',
+    '/blog/is-iphone-12-esim-compatible',
+    '/blog/does-iphone-12-pro-have-esim',
   ]
 
   const faq = [

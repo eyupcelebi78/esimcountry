@@ -3,24 +3,24 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://esimcountry.fyi'),
-  alternates: { canonical: '/is-iphone-12-support-esim' },
+  alternates: { canonical: '/blog/is-iphone-12-support-esim' },
   title: 'Is iPhone 12 Support eSIM? (2025): Yes — How It Works',
   description: 'Yes, iPhone 12 supports eSIM. See how it works, requirements, dual SIM details, and travel plan comparison.',
   openGraph: {
     title: 'Is iPhone 12 Support eSIM? (2025): Yes — How It Works',
     description: 'Explainer: iPhone 12 eSIM support, setup, dual SIM, and travel options.',
-    url: 'https://esimcountry.fyi/is-iphone-12-support-esim',
+    url: 'https://esimcountry.fyi/blog/is-iphone-12-support-esim',
     type: 'article',
   },
 }
 
 export default function Page() {
   const related = [
-    '/does-iphone-12-support-esim',
-    '/does-iphone-12-have-esim',
-    '/can-iphone-12-use-esim',
-    '/iphone-12-esim-support',
-    '/is-iphone-12-esim-compatible',
+    '/blog/does-iphone-12-support-esim',
+    '/blog/does-iphone-12-have-esim',
+    '/blog/can-iphone-12-use-esim',
+    '/blog/iphone-12-esim-support',
+    '/blog/is-iphone-12-esim-compatible',
   ]
 
   const faq = [

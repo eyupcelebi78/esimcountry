@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'saily-esim-review-2025'
   ]
 
-  // iPhone 12 guides (root-level pages)
+  // iPhone 12 guides (blog pages)
   const iphone12Guides = [
     'iphone-12-esim',
     'does-iphone-12-have-esim',
@@ -105,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // iPhone 12 guide pages
   const guidePages = iphone12Guides.map(slug => ({
-    url: `${baseUrl}/${slug}`,
+    url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.75,

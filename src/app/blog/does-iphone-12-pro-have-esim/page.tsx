@@ -3,24 +3,24 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://esimcountry.fyi'),
-  alternates: { canonical: '/does-iphone-12-pro-have-esim' },
+  alternates: { canonical: '/blog/does-iphone-12-pro-have-esim' },
   title: 'Does iPhone 12 Pro Have eSIM? (2025): Yes — Setup & Dual SIM',
   description: 'Yes, iPhone 12 Pro has eSIM. Learn setup steps, dual SIM usage, troubleshooting, and compare travel eSIM plans by destination.',
   openGraph: {
     title: 'Does iPhone 12 Pro Have eSIM? (2025): Yes — Setup & Dual SIM',
     description: 'All about eSIM on iPhone 12 Pro: activation, dual SIM tips, fixes, and plan comparison.',
-    url: 'https://esimcountry.fyi/does-iphone-12-pro-have-esim',
+    url: 'https://esimcountry.fyi/blog/does-iphone-12-pro-have-esim',
     type: 'article',
   },
 }
 
 export default function Page() {
   const related = [
-    '/iphone-12-esim',
-    '/does-iphone-12-have-esim',
-    '/does-iphone-12-support-esim',
-    '/is-iphone-12-esim-compatible',
-    '/can-iphone-12-use-esim',
+    '/blog/iphone-12-esim',
+    '/blog/does-iphone-12-have-esim',
+    '/blog/does-iphone-12-support-esim',
+    '/blog/is-iphone-12-esim-compatible',
+    '/blog/can-iphone-12-use-esim',
   ]
 
   const faq = [

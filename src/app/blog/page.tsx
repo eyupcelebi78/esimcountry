@@ -44,6 +44,96 @@ const blogPosts = [
     featured: true
   },
   {
+    slug: 'iphone-12-esim',
+    title: 'iPhone 12 eSIM (2025): Setup, Compatibility, Dual SIM',
+    excerpt: 'Complete iPhone 12 eSIM guide: activation, dual SIM setup, carrier compatibility, and troubleshooting tips.',
+    date: 'January 2025',
+    readTime: '7 min read',
+    category: 'Device Guides',
+    featured: true
+  },
+  {
+    slug: 'does-iphone-12-have-esim',
+    title: 'Does iPhone 12 Have eSIM? (2025): Yes — Full Guide',
+    excerpt: 'Everything about iPhone 12 eSIM: activation steps, dual SIM usage, and travel plan comparison.',
+    date: 'January 2025',
+    readTime: '6 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'does-iphone-12-support-esim',
+    title: 'Does iPhone 12 Support eSIM? (2025): Compatibility & Setup',
+    excerpt: 'iPhone 12 eSIM support guide: requirements, activation process, dual SIM tips, and carrier compatibility.',
+    date: 'January 2025',
+    readTime: '6 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'iphone-12-mini-esim',
+    title: 'iPhone 12 mini eSIM (2025): Compatibility, Setup, Dual SIM',
+    excerpt: 'iPhone 12 mini eSIM guide: activation steps, dual SIM setup, and travel plan recommendations.',
+    date: 'January 2025',
+    readTime: '6 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'is-iphone-12-esim-compatible',
+    title: 'Is iPhone 12 eSIM Compatible? (2025): Yes — Requirements & Tips',
+    excerpt: 'iPhone 12 eSIM compatibility guide: carrier support, iOS requirements, and activation tips.',
+    date: 'January 2025',
+    readTime: '5 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'iphone-12-esim-support',
+    title: 'iPhone 12 eSIM Support (2025): Carriers, Regions, Requirements',
+    excerpt: 'Complete guide to iPhone 12 eSIM carrier support by region with setup tips and requirements.',
+    date: 'January 2025',
+    readTime: '6 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'can-iphone-12-use-esim',
+    title: 'Can iPhone 12 Use eSIM? (2025): Yes — Setup and Tips',
+    excerpt: 'Learn how to use eSIM on iPhone 12: activation guide, dual SIM setup, and troubleshooting.',
+    date: 'January 2025',
+    readTime: '5 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'is-iphone-12-support-esim',
+    title: 'Is iPhone 12 Support eSIM? (2025): Yes — How It Works',
+    excerpt: 'iPhone 12 eSIM support explained: compatibility, setup process, and travel options.',
+    date: 'January 2025',
+    readTime: '5 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'does-iphone-12-pro-have-esim',
+    title: 'Does iPhone 12 Pro Have eSIM? (2025): Yes — Setup & Dual SIM',
+    excerpt: 'iPhone 12 Pro eSIM guide: activation steps, dual SIM tips, and travel plan comparison.',
+    date: 'January 2025',
+    readTime: '5 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
+    slug: 'can-all-of-the-iphone-12-use-esims',
+    title: 'Can All of the iPhone 12 Use eSIMs? (2025): Yes — Model Coverage',
+    excerpt: 'Complete iPhone 12 series eSIM compatibility guide covering all models and setup tips.',
+    date: 'January 2025',
+    readTime: '5 min read',
+    category: 'Device Guides',
+    featured: false
+  },
+  {
     slug: 'best-esim-germany-2025',
     title: 'Best Germany eSIM Plans 2025: Deutsche Telekom, Vodafone',
     excerpt: 'Complete Germany eSIM comparison. Coverage maps, data speeds, and real prices for travel and business.',
@@ -68,13 +158,14 @@ const blogPosts = [
     date: 'January 2025',
     readTime: '12 min read',
     category: 'Provider Reviews',
-    featured: true
+    featured: false
   },
 ];
 
 const categories = [
   { name: 'All Posts', count: blogPosts.length, slug: 'all' },
   { name: 'Country Guides', count: blogPosts.filter(p => p.category === 'Guides').length, slug: 'country-guides' },
+  { name: 'Device Guides', count: blogPosts.filter(p => p.category === 'Device Guides').length, slug: 'device-guides' },
   { name: 'Comparisons', count: blogPosts.filter(p => p.category === 'Comparisons').length, slug: 'comparisons' },
   { name: 'Provider Reviews', count: blogPosts.filter(p => p.category === 'Provider Reviews').length, slug: 'reviews' },
   { name: 'City Guides', count: blogPosts.filter(p => p.category === 'City Guides').length, slug: 'city-guides' },
