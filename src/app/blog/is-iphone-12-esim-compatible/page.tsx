@@ -41,7 +41,7 @@ export default function Page() {
   const faq = [
     { q: 'Is iPhone 12 eSIM compatible?', a: 'Yes. All iPhone 12 models support eSIM. Your carrier must support eSIM in your region.' },
     { q: 'What iOS version is recommended?', a: 'iOS 16 or later for the best eSIM transfer features and reliability.' },
-    { q: 'Any region caveats?', a: 'Some regions may limit eSIM features or require in‑store activation. Check your carrier's policy.' },
+    { q: 'Any region caveats?', a: 'Some regions may limit eSIM features or require in-store activation. Check your carrier policy.' },
     { q: 'Can I use eSIM with any carrier?', a: 'Only carriers that support eSIM technology. Most major carriers worldwide now offer eSIM support.' },
     { q: 'Is there a difference between iPhone 12 models for eSIM?', a: 'No. All iPhone 12, 12 mini, 12 Pro, and 12 Pro Max have identical eSIM capabilities.' },
     { q: 'Can I travel internationally with iPhone 12 eSIM?', a: 'Yes. iPhone 12 eSIM works globally with compatible carriers and travel eSIM providers.' },
