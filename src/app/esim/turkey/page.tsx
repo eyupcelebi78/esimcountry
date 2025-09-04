@@ -1,3 +1,5 @@
+'use client';
+
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -5,8 +7,6 @@ export const metadata: Metadata = {
     canonical: '/esim/turkey',
   },
 }
-
-'use client';
 
 import { useState, useEffect } from 'react';
 import { ESIMPlan } from '@/lib/supabase';
