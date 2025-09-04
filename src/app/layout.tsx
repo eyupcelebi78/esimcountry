@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   creator: "eSIM Country",
   publisher: "eSIM Country",
   metadataBase: new URL('https://esimcountry.fyi'),
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: true,
     follow: true,

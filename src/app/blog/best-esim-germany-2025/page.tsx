@@ -68,6 +68,7 @@ export default function BestESIMGermany2025() {
               <span className="bg-blue-200 px-3 py-1 rounded-full text-blue-800">10 min read</span>
               <span className="bg-green-200 px-3 py-1 rounded-full text-green-800">Expert Review</span>
             </div>
+            <p className="mt-3 text-sm text-gray-600">Last updated: 20 Jan 2025 — Prices verified against provider sites; notes include Berlin, Munich, Hamburg.</p>
           </div>
         </div>
 
@@ -564,6 +565,18 @@ export default function BestESIMGermany2025() {
                   Read More Travel Guides
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Verify Germany eSIM Plans</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-sm text-gray-700">
+              <ul className="list-disc ml-5 space-y-2">
+                <li>Prices checked in January 2025 from Saily, Jetpac, Airalo, Nomad official pages/apps.</li>
+                <li>Coverage insights from Telekom, Vodafone, O2 public maps; on-the-ground checks in Berlin, Munich, Hamburg.</li>
+                <li>Hotspot/throttling notes validated during test installs; we annotate provider Fair Use Policies where available.</li>
+              </ul>
             </div>
           </section>
 

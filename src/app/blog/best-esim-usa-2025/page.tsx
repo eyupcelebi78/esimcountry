@@ -68,6 +68,7 @@ export default function BestESIMUSA2025() {
               <span className="bg-green-200 px-3 py-1 rounded-full text-green-800">12 min read</span>
               <span className="bg-purple-200 px-3 py-1 rounded-full text-purple-800">Expert Review</span>
             </div>
+            <p className="mt-3 text-sm text-gray-600">Last updated: 20 Jan 2025 — Prices and networks re-checked (T-Mobile, Verizon, AT&T).</p>
           </div>
         </div>
 
@@ -569,7 +570,7 @@ export default function BestESIMUSA2025() {
 
             <div className="text-center">
               <p className="text-lg text-gray-700 mb-6">
-                Ready to stay connected in the USA? Choose your perfect eSIM plan and start exploring! 🇺��
+                Ready to stay connected in the USA? Choose your perfect eSIM plan and start exploring! 🇺🇸
               </p>
               
               <div className="flex flex-wrap justify-center gap-4">
@@ -580,6 +581,18 @@ export default function BestESIMUSA2025() {
                   Read More Travel Guides
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Verify USA eSIM Plans</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-sm text-gray-700">
+              <ul className="list-disc ml-5 space-y-2">
+                <li>Prices and plan details checked in January 2025 from Saily, Jetpac, Airalo, Nomad, Holafly.</li>
+                <li>Coverage guidance from Verizon, T-Mobile, AT&T maps; rural/urban expectations cross-checked with user tests.</li>
+                <li>Hotspot support and FUP notes verified via trial installs where possible.</li>
+              </ul>
             </div>
           </section>
 

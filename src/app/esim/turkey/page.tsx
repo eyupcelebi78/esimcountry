@@ -1,3 +1,11 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/esim/turkey',
+  },
+}
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -137,6 +145,10 @@ export default function TurkeyPage() {
           </div>
         </div>
       </header>
+
+      <div className="bg-red-50 border-b border-red-100 text-center text-sm text-red-800 py-3">
+        <span className="font-semibold">Local tip:</span> İstanbul ve kıyı bölgelerinde 5G hızları yüksek; Kapadokya ve otoyollarda kapsama için Türk Telekom/Vodafone şebekeli planlar daha tutarlı olabilir.
+      </div>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">

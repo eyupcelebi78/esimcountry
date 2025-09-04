@@ -164,19 +164,19 @@ export default function CountryPage({ params }: CountryPageProps) {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://esimcountry.com'
+        item: 'https://esimcountry.fyi'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'eSIM Plans',
-        item: 'https://esimcountry.com/#countries'
+        item: 'https://esimcountry.fyi/#countries'
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: `${countryName} eSIM`,
-        item: `https://esimcountry.com/esim/${countryName.toLowerCase().replace(/ /g, '-')}`
+        item: `https://esimcountry.fyi/esim/${countryName.toLowerCase().replace(/ /g, '-')}`
       }
     ]
   };
@@ -206,9 +206,11 @@ export default function CountryPage({ params }: CountryPageProps) {
             <h1 className="text-4xl font-bold mb-4">
               Best eSIM Plans for {countryName}
             </h1>
-            <p className="text-xl opacity-90 mb-6 max-w-2xl mx-auto">
-              Compare {plans.length} eSIM plans from {providers.length} trusted providers. 
-              Get connected instantly upon arrival in {countryName} with no roaming charges.
+            <p className="text-xl opacity-90 mb-2 max-w-2xl mx-auto">
+              Compare {plans.length} eSIM plans from {providers.length} trusted providers.
+            </p>
+            <p className="text-base opacity-90 mb-6 max-w-2xl mx-auto">
+              Local tip: Pricing and coverage can vary between big cities and rural routes. We annotate where {countryName} travelers typically see the fastest 5G vs. best rural reliability.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <span className="bg-white/20 px-3 py-1 rounded-full">

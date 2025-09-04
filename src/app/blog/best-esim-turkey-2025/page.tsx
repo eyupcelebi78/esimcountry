@@ -95,6 +95,7 @@ export default function BestESimTurkey2025() {
               <span className="bg-blue-200 px-3 py-1 rounded-full text-blue-800">8 min read</span>
               <span className="bg-green-200 px-3 py-1 rounded-full text-green-800">Expert Review</span>
             </div>
+            <p className="mt-3 text-sm text-gray-600">Last updated: 20 Jan 2025 — Prices re-validated; notes cover Istanbul, Cappadocia, Antalya.</p>
           </div>
         </div>
 
@@ -402,6 +403,18 @@ export default function BestESimTurkey2025() {
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">Can I buy eSIM on arrival at Istanbul Airport?</h4>
                 <p className="text-gray-700">Yes, but it's more expensive and time-consuming. Turkish telecom stores charge tourist prices. It's cheaper to buy online before travel.</p>
               </div>
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Verify Turkey eSIM Plans</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 text-sm text-gray-700">
+              <ul className="list-disc ml-5 space-y-2">
+                <li>Prices checked in January 2025 on Saily, Airalo, Nomad, Holafly, Jetpac official channels.</li>
+                <li>Coverage based on Türk Telekom, Turkcell, Vodafone public maps and traveler tests in Istanbul/Antalya/Cappadocia.</li>
+                <li>We document hotspot/FUP behavior during test installs where feasible.</li>
+              </ul>
             </div>
           </section>
 
