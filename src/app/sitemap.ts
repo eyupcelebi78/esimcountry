@@ -27,6 +27,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'saily-esim-review-2025'
   ]
 
+  // iPhone 12 guides (root-level pages)
+  const iphone12Guides = [
+    'iphone-12-esim',
+    'does-iphone-12-have-esim',
+    'does-iphone-12-support-esim',
+    'iphone-12-mini-esim',
+    'is-iphone-12-esim-compatible',
+    'iphone-12-esim-support',
+    'can-iphone-12-use-esim',
+    'is-iphone-12-support-esim',
+    'does-iphone-12-pro-have-esim',
+    'can-all-of-the-iphone-12-use-esims',
+  ]
+
   // Main pages
   const mainPages = [
     {
@@ -89,5 +103,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...mainPages, ...countryPages, ...blogPages]
+  // iPhone 12 guide pages
+  const guidePages = iphone12Guides.map(slug => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.75,
+  }))
+
+  return [...mainPages, ...countryPages, ...blogPages, ...guidePages]
 } 
